@@ -1,11 +1,41 @@
-import React from "react";
-import Navbar from "./Navbar";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import Navbar from "./Navbar";
+import Projects from "./Projects"; // Import the Projects component
 
 const Header = () => {
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
+
+  // Create a ref for the "Projects" section
+  const projectsRef = useRef(null);
+
+  const handleChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Validate input
+    if (!name.trim()) {
+      setError("Name is required.");
+    } else if (name.trim().length < 2) {
+      setError("Name must be at least 2 characters long.");
+    } else {
+      setError("");
+      alert("Form submitted successfully!");
+
+      // Scroll to the "Projects" section after successful form submission
+      if (projectsRef.current) {
+        projectsRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <div
-      className="min-h-screen  bh-cover bg-center flex items-center w-full overflow-hidden"
+      className="min-h-screen bg-cover bg-center flex items-center w-full overflow-hidden"
       style={{ backgroundImage: "url('/header_img.png')" }}
       id="Header"
     >
@@ -19,23 +49,12 @@ const Header = () => {
       >
         <label
           className="text-5xl sm:text-6xl md:text-[82px] inline-block max-w-3xl font-semibold pt-20"
-          for="personal_information"
+          htmlFor="personal_information"
         >
-          Personal Information{" "}
+          Personal Information Form ZenStreet.AI
         </label>
-        <div className="space-x-6 mt-16">
-          <input
-            type="text"
-            className="border border-white px-8 py-3 rounded text-black"
-            id="personal_information"
-            placeholder="Your name"
-          />
-
-          <a href="#Submit" className="bg-blue-500 px-8 py-3 rounded">
-            Submit
-          </a>
-        </div>
       </motion.div>
+      {/* Pass the ref to the Projects component */}
     </div>
   );
 };

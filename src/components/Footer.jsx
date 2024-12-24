@@ -1,5 +1,6 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import logo_image from "../assets/img_image.png";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
     >
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start">
         <div className="w-full md:w-1/3 mb-8 md:mb-0">
-          <img src={assets.logo_dark} alt="" />
+          <img src={logo_image} alt="" className="w-14" />
           <p className="text-gray-400 mt-4">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text.
@@ -52,7 +53,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t border-gray-700 py-4 mt-10 text-center text-gray-500">
-        Copyright 2024 © Estate. All Rights Reserved.
+        Copyright 2024 © ZenStreet. All Rights Reserved.
       </div>
     </div>
   );
