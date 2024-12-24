@@ -25,8 +25,8 @@ const Footer = () => {
             <a href="#Projects" className="hover:text-white">
               Form
             </a>
-            <a href="#Contact" className="hover:text-white">
-              Contact Us
+            <a href="#Header" className="hover:text-white">
+              About Us
             </a>
             <a href="#" className="hover:text-white">
               Privacy Policy

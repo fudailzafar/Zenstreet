@@ -31,7 +31,6 @@ const App = () => {
       <ToastContainer />
       <Header />
       <Projects formData={formData} onFormDataChange={handleFormDataChange} />
-
       <Footer />
     </div>
   );

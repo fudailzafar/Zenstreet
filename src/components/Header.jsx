@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
-import Projects from "./Projects"; // Import the Projects component
+import Projects from "./Projects"; // Import the Projects componen
 
 const Header = () => {
   const [name, setName] = useState("");
