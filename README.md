@@ -1,14 +1,14 @@
-# Real Estate Website
+# Multi-Step Form for ZenStreet.AI
 
-A modern and responsive Real Estate Website built with ReactJS. This project showcases property listings, search functionality, and a clean user interface tailored for real estate businesses.
+This project is a **multi-step form** built with **React** that includes dynamic state management. The form has various features like client-side validation, smooth animations, and a responsive design.
 
-## 🚀 Features
+## Features
 
-- **Dynamic Pages**: Modular components for reusability and scalability.
-- **Responsive Design**: Fully mobile-friendly layout with adaptive styles.
-- **Property Listings**: Display properties with key details and images.
-- **ReactJS**: Leveraging ReactJS with modern development practices.
-- **Easy Navigation**: User-friendly routing for seamless transitions.
+- **Multi-Step Form**: Users can navigate through 3 sections.
+- **Dark Mode**: Toggle between light and dark themes.
+- **Animations**: Smooth transitions between form steps using Framer Motion.
+- **Validation**: Client-side validation with error display.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop views.
 
 ## 🛠️ Tech Stack
 
@@ -18,21 +18,22 @@ A modern and responsive Real Estate Website built with ReactJS. This project sho
 
 ## 📂 Folder Structure
 ```
-└── Real-Estate-Website
+
+└── Zenstreet/
     ├── index.html
     ├── eslint.config.js
-    ├── public
+    ├── public/
     ├── postcss.config.js
     ├── package.json
     ├── vite.config.js
     ├── README.md
     ├── tailwind.config.js
-    └── src
+    └── src/
         ├── App.jsx
         ├── index.css
-        ├── assets
+        ├── assets/
         │   └── assets.js
-        ├── components
+        ├── components/
         │   ├── Contact.jsx
         │   ├── Projects.jsx
         │   ├── Header.jsx
@@ -41,6 +42,7 @@ A modern and responsive Real Estate Website built with ReactJS. This project sho
         │   ├── Testimonials.jsx
         │   └── Navbar.jsx
         └── main.jsx
+
 ```
 
 ## 💻 Getting Started
@@ -52,47 +54,48 @@ Ensure you have the following installed:
 - **Node.js** (v14 or later)
 - **npm** (comes with Node.js) or **yarn**
 
-### Installation
+Here’s a sample **README.md** for your multi-step form project:
 
-Clone this repository:
+## Installation
+
+### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/fudailzafar/Real-Estate-Website.git
-cd Real-Estate-Website
+git clone https://github.com/fudailzafar/Zenstreet.git
 ```
 
-Install dependencies:
+### 2. Install dependencies:
+
+Navigate into the project directory and install the required dependencies:
 
 ```bash
+cd Zenstreet
 npm install
 ```
 
-or
-
-```bash
-yarn
-```
-
-Start the development server:
+### 3. Run the development server:
 
 ```bash
 npm start
 ```
 
-or
+The project will be available at [http://localhost:3000](http://localhost:3000).
 
-```bash
-yarn start
-```
+## Usage
 
-Open your browser and navigate to `http://localhost:3000`.
+- **Dark Mode Toggle**: Switch between light and dark themes using the toggle button.
+- **Navigate through the form**: Fill out each step and navigate using the next/previous buttons.
+- **Real-Time Collaboration**: The form will reflect real-time changes as simulated by a mock API.
 
-## 📦 Deployment
+## Contributing
 
-To build the project for production:
+We welcome contributions! If you'd like to improve the project or add features, please follow these steps:
 
-```bash
-npm run build
-```
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Make your changes.
+4. Submit a pull request.
 
-This will create a `build/` folder with optimized static files. You can deploy these files to any web hosting service.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
