@@ -99,7 +99,7 @@ const Projects = () => {
 
   return (
     <div
-      className={`container mx-auto py-4 pt-20 px-6 md:px-20 lg:px-32 my-20 w-full overflow-hidden ${
+      className={`container mx-auto py-4 pt-20 px-6 md:px-20 lg:px-32 my-15 w-full overflow-hidden ${
         isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
       }`}
     >
@@ -135,7 +135,7 @@ const Projects = () => {
               isDarkMode ? "decoration-white" : "decoration-black"
             }`}
           >
-            Address
+            Details
           </span>
         </h1>
         <p
@@ -143,7 +143,7 @@ const Projects = () => {
             isDarkMode ? "text-gray-400" : "text-gray-500"
           }`}
         >
-          Providing Precision, Delivering Excellence – Share Your Address
+          Providing Precision, Delivering Excellence – Share Your Details
         </p>
 
         {/* Address Form */}
