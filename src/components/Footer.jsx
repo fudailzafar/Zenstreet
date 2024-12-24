@@ -22,8 +22,8 @@ const Footer = () => {
             <a href="#Header" className="hover:text-white">
               Home
             </a>
-            <a href="#About" className="hover:text-white">
-              About Us
+            <a href="#Projects" className="hover:text-white">
+              Form
             </a>
             <a href="#Contact" className="hover:text-white">
               Contact Us

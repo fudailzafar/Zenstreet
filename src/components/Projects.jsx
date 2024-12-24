@@ -98,24 +98,32 @@ const Projects = forwardRef((props, ref) => {
       transition={{ duration: 1 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      className="container mx-auto py-4 pt-20 px-6 md:px-20 lg:px-32 my-20 w-full overflow-hidden flex flex-col items-center"
+      className="container mx-auto py-4 pt-10 px-6 md:px-20 lg:px-32 my-10 w-full overflow-hidden flex flex-col items-center"
       id="Projects"
     >
-      <hr className="mb-10 w-full" />
-      <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-center">
+      <motion.h1
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="text-3xl sm:text-4xl font-bold mb-4 text-center"
+      >
         Your{" "}
         <span className="underline underline-offset-4 decoration-1 font-light">
-          Address
+          Details
         </span>
-      </h1>
-      <p className="text-center text-gray-500 mb-8 max-w-80 mx-auto text-lg">
-        Providing Precision, Delivering Excellence – Share Your Address
+      </motion.h1>
+      <p className="text-center text-gray-500 mb-6 max-w-80 mx-auto text-lg">
+        Providing Precision, Delivering Excellence – Share Your Details
       </p>
 
       {/* Address Form */}
       <form onSubmit={handleSubmit} className="w-full max-w-xl">
         {/* Name */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <label
             htmlFor="name"
             className="block text-lg font-semibold text-gray-900"
@@ -132,10 +140,14 @@ const Projects = forwardRef((props, ref) => {
             className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
           />
           {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-        </div>
+        </motion.div>
 
         {/* Country */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <label
             htmlFor="country"
             className="block text-lg font-semibold text-gray-900"
@@ -154,10 +166,14 @@ const Projects = forwardRef((props, ref) => {
           {errors.country && (
             <p className="text-red-500 text-sm">{errors.country}</p>
           )}
-        </div>
+        </motion.div>
 
         {/* Street Address */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
           <label
             htmlFor="street-address"
             className="block text-lg font-semibold text-gray-900"
@@ -176,74 +192,84 @@ const Projects = forwardRef((props, ref) => {
           {errors.streetAddress && (
             <p className="text-red-500 text-sm">{errors.streetAddress}</p>
           )}
-        </div>
+        </motion.div>
 
         {/* City, State/Province, Pin Code */}
-        <div className="grid grid-cols-3 gap-4">
-          <div>
-            <label
-              htmlFor="city"
-              className="block text-lg font-semibold text-gray-900"
-            >
-              City
-            </label>
-            <input
-              type="text"
-              name="city"
-              id="city"
-              placeholder="City"
-              value={formData.city}
-              onChange={handleChange}
-              className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-            />
-            {errors.city && (
-              <p className="text-red-500 text-sm">{errors.city}</p>
-            )}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <div className="grid grid-cols-3 gap-4">
+            <div>
+              <label
+                htmlFor="city"
+                className="block text-lg font-semibold text-gray-900"
+              >
+                City
+              </label>
+              <input
+                type="text"
+                name="city"
+                id="city"
+                placeholder="City"
+                value={formData.city}
+                onChange={handleChange}
+                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+              />
+              {errors.city && (
+                <p className="text-red-500 text-sm">{errors.city}</p>
+              )}
+            </div>
+            <div>
+              <label
+                htmlFor="state"
+                className="block text-lg font-semibold text-gray-900"
+              >
+                State/Province
+              </label>
+              <input
+                type="text"
+                name="state"
+                id="state"
+                placeholder="State/Province"
+                value={formData.state}
+                onChange={handleChange}
+                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+              />
+              {errors.state && (
+                <p className="text-red-500 text-sm">{errors.state}</p>
+              )}
+            </div>
+            <div>
+              <label
+                htmlFor="pin-code"
+                className="block text-lg font-semibold text-gray-900"
+              >
+                Pin Code
+              </label>
+              <input
+                type="text"
+                name="pinCode"
+                id="pin-code"
+                placeholder="Pin Code"
+                value={formData.pinCode}
+                onChange={handleChange}
+                className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+              />
+              {errors.pinCode && (
+                <p className="text-red-500 text-sm">{errors.pinCode}</p>
+              )}
+            </div>
           </div>
-          <div>
-            <label
-              htmlFor="state"
-              className="block text-lg font-semibold text-gray-900"
-            >
-              State/Province
-            </label>
-            <input
-              type="text"
-              name="state"
-              id="state"
-              placeholder="State/Province"
-              value={formData.state}
-              onChange={handleChange}
-              className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-            />
-            {errors.state && (
-              <p className="text-red-500 text-sm">{errors.state}</p>
-            )}
-          </div>
-          <div>
-            <label
-              htmlFor="pin-code"
-              className="block text-lg font-semibold text-gray-900"
-            >
-              Pin Code
-            </label>
-            <input
-              type="text"
-              name="pinCode"
-              id="pin-code"
-              placeholder="Pin Code"
-              value={formData.pinCode}
-              onChange={handleChange}
-              className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-            />
-            {errors.pinCode && (
-              <p className="text-red-500 text-sm">{errors.pinCode}</p>
-            )}
-          </div>
-        </div>
+        </motion.div>
 
         {/* Email */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+        >
           <label
             htmlFor="email"
             className="block text-lg font-semibold text-gray-900"
@@ -262,47 +288,33 @@ const Projects = forwardRef((props, ref) => {
           {errors.email && (
             <p className="text-red-500 text-sm">{errors.email}</p>
           )}
-        </div>
-
-        {/* Notifications Section */}
-        <fieldset>
-          <legend className="text-lg font-semibold text-gray-900">
-            Notifications
-          </legend>
-          {/* Checkboxes for notifications */}
-          {["comments", "candidates", "offers"].map((notification) => (
-            <div className="flex gap-3" key={notification}>
-              <input
-                id={notification}
-                name={notification}
-                type="checkbox"
-                checked={formData.notifications[notification]}
-                onChange={handleCheckboxChange}
-                className="w-6 h-6 rounded border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 focus:outline-none"
-              />
-              <label htmlFor={notification} className="text-lg text-gray-900">
-                {notification.charAt(0).toUpperCase() + notification.slice(1)}
-              </label>
-            </div>
-          ))}
-        </fieldset>
+        </motion.div>
 
         {/* Save Button */}
-        <div className="mt-6 flex items-center justify-end gap-x-6">
-          <button
+        <motion.div
+          className="mt-6 flex items-center justify-end gap-x-6"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+        >
+          <motion.button
             type="button"
             className="text-lg font-semibold text-gray-900"
             onClick={() => alert("Cancelled")}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             Cancel
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             type="submit"
             className="rounded-md bg-indigo-600 px-6 py-2 text-lg font-semibold text-white shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Save
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </form>
     </motion.div>
   );
