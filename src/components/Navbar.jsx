@@ -29,8 +29,8 @@ const Navbar = () => {
             Form
           </a>
 
-          <a href="#Contact" className="cursor-pointer hover:text-gray-400">
-            Review
+          <a href="#Footer" className="cursor-pointer hover:text-gray-400">
+            Footer
           </a>
         </ul>
         <button className="hidden md:block bg-white px-8 py-2 rounded-full">
@@ -75,10 +75,10 @@ const Navbar = () => {
 
           <a
             onClick={() => setShowMobileMenu(false)}
-            href="#Contact"
+            href="#Footer"
             className="px-4 py-2 rounded-full inline-block"
           >
-            Review
+            Footer
           </a>
         </ul>
       </div>
